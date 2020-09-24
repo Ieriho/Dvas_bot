@@ -1,0 +1,1 @@
+web: python first_script.py
