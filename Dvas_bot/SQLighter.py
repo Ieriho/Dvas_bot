@@ -37,7 +37,7 @@ class SQLighter:
                 return self.cursor.execute('INSERT INTO statistics (chat_user_id, user_stat) VALUES(?, ?)',
                                            (user_id, incr))
             except:
-                stat = self.cursor.execute("SELECT user_stat FROM statistics WHERE chat_user_id = ? VALUES(?)",
+                stat = self.cursor.execute("SELECT user_stat FROM statistics WHERE chat_user_id = ?",
                                            user_id)
                 self.cursor.execute("UPDATE statistics SET user_stat = ? WHERE chat_user_id = ? VALUES(?, ?)",
                                     (incr+stat, user_id))
